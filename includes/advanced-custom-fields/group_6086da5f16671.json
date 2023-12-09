@@ -1,0 +1,64 @@
+{
+    "key": "group_6086da5f16671",
+    "title": "Button",
+    "fields": [
+        {
+            "key": "field_6086da965e292",
+            "label": "Stil",
+            "name": "block_button_style",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "select2-search-disabled",
+                "id": ""
+            },
+            "choices": {
+                "primary": "Primär (Hintergrund)",
+                "secondary": "Sekundär (Rahmen)"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_6086da6c5e291",
+            "label": "Link",
+            "name": "block_button_link",
+            "type": "link",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/button"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1620200521
+}
