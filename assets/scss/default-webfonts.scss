@@ -1,0 +1,2991 @@
+@font-face {
+	font-family: 'Icomoon';
+	font-weight: 400;
+	font-style: normal;
+	font-display: block;
+	src: url('../webfonts/icomoon/icomoon.eot?stre04');
+	src: url('../webfonts/icomoon/icomoon.eot?stre04#iefix') format('embedded-opentype'),
+		url('../webfonts/icomoon/icomoon.woff2?stre04') format('woff2'),
+		url('../webfonts/icomoon/icomoon.woff?stre04') format('woff'),
+		url('../webfonts/icomoon/icomoon.ttf?stre04') format('truetype'),
+		url('../webfonts/icomoon/icomoon.svg?stre04#icomoon') format('svg');
+}
+
+[data-icon] {
+	&:before {
+		font-size: 20px;
+		line-height: 1;
+		font-family: 'Icomoon';
+		font-weight: 400;
+	}
+}
+
+[data-icon="home"] {
+	&:before {
+		content: '\e900';
+	}
+}
+
+[data-icon="home2"] {
+	&:before {
+		content: '\e901';
+	}
+}
+
+[data-icon="home3"] {
+	&:before {
+		content: '\e902';
+	}
+}
+
+[data-icon="office"] {
+	&:before {
+		content: '\e903';
+	}
+}
+
+[data-icon="newspaper"] {
+	&:before {
+		content: '\e904';
+	}
+}
+
+[data-icon="pencil"] {
+	&:before {
+		content: '\e905';
+	}
+}
+
+[data-icon="pencil2"] {
+	&:before {
+		content: '\e906';
+	}
+}
+
+[data-icon="quill"] {
+	&:before {
+		content: '\e907';
+	}
+}
+
+[data-icon="pen"] {
+	&:before {
+		content: '\e908';
+	}
+}
+
+[data-icon="blog"] {
+	&:before {
+		content: '\e909';
+	}
+}
+
+[data-icon="eyedropper"] {
+	&:before {
+		content: '\e90a';
+	}
+}
+
+[data-icon="droplet"] {
+	&:before {
+		content: '\e90b';
+	}
+}
+
+[data-icon="paint-format"] {
+	&:before {
+		content: '\e90c';
+	}
+}
+
+[data-icon="image"] {
+	&:before {
+		content: '\e90d';
+	}
+}
+
+[data-icon="images"] {
+	&:before {
+		content: '\e90e';
+	}
+}
+
+[data-icon="camera"] {
+	&:before {
+		content: '\e90f';
+	}
+}
+
+[data-icon="headphones"] {
+	&:before {
+		content: '\e910';
+	}
+}
+
+[data-icon="music"] {
+	&:before {
+		content: '\e911';
+	}
+}
+
+[data-icon="play"] {
+	&:before {
+		content: '\e912';
+	}
+}
+
+[data-icon="film"] {
+	&:before {
+		content: '\e913';
+	}
+}
+
+[data-icon="video-camera"] {
+	&:before {
+		content: '\e914';
+	}
+}
+
+[data-icon="dice"] {
+	&:before {
+		content: '\e915';
+	}
+}
+
+[data-icon="pacman"] {
+	&:before {
+		content: '\e916';
+	}
+}
+
+[data-icon="spades"] {
+	&:before {
+		content: '\e917';
+	}
+}
+
+[data-icon="clubs"] {
+	&:before {
+		content: '\e918';
+	}
+}
+
+[data-icon="diamonds"] {
+	&:before {
+		content: '\e919';
+	}
+}
+
+[data-icon="bullhorn"] {
+	&:before {
+		content: '\e91a';
+	}
+}
+
+[data-icon="connection"] {
+	&:before {
+		content: '\e91b';
+	}
+}
+
+[data-icon="podcast"] {
+	&:before {
+		content: '\e91c';
+	}
+}
+
+[data-icon="feed"] {
+	&:before {
+		content: '\e91d';
+	}
+}
+
+[data-icon="mic"] {
+	&:before {
+		content: '\e91e';
+	}
+}
+
+[data-icon="book"] {
+	&:before {
+		content: '\e91f';
+	}
+}
+
+[data-icon="books"] {
+	&:before {
+		content: '\e920';
+	}
+}
+
+[data-icon="library"] {
+	&:before {
+		content: '\e921';
+	}
+}
+
+[data-icon="file-text"] {
+	&:before {
+		content: '\e922';
+	}
+}
+
+[data-icon="profile"] {
+	&:before {
+		content: '\e923';
+	}
+}
+
+[data-icon="file-empty"] {
+	&:before {
+		content: '\e924';
+	}
+}
+
+[data-icon="files-empty"] {
+	&:before {
+		content: '\e925';
+	}
+}
+
+[data-icon="file-text2"] {
+	&:before {
+		content: '\e926';
+	}
+}
+
+[data-icon="file-picture"] {
+	&:before {
+		content: '\e927';
+	}
+}
+
+[data-icon="file-music"] {
+	&:before {
+		content: '\e928';
+	}
+}
+
+[data-icon="file-play"] {
+	&:before {
+		content: '\e929';
+	}
+}
+
+[data-icon="file-video"] {
+	&:before {
+		content: '\e92a';
+	}
+}
+
+[data-icon="file-zip"] {
+	&:before {
+		content: '\e92b';
+	}
+}
+
+[data-icon="copy"] {
+	&:before {
+		content: '\e92c';
+	}
+}
+
+[data-icon="paste"] {
+	&:before {
+		content: '\e92d';
+	}
+}
+
+[data-icon="stack"] {
+	&:before {
+		content: '\e92e';
+	}
+}
+
+[data-icon="folder"] {
+	&:before {
+		content: '\e92f';
+	}
+}
+
+[data-icon="folder-open"] {
+	&:before {
+		content: '\e930';
+	}
+}
+
+[data-icon="folder-plus"] {
+	&:before {
+		content: '\e931';
+	}
+}
+
+[data-icon="folder-minus"] {
+	&:before {
+		content: '\e932';
+	}
+}
+
+[data-icon="folder-download"] {
+	&:before {
+		content: '\e933';
+	}
+}
+
+[data-icon="folder-upload"] {
+	&:before {
+		content: '\e934';
+	}
+}
+
+[data-icon="price-tag"] {
+	&:before {
+		content: '\e935';
+	}
+}
+
+[data-icon="price-tags"] {
+	&:before {
+		content: '\e936';
+	}
+}
+
+[data-icon="barcode"] {
+	&:before {
+		content: '\e937';
+	}
+}
+
+[data-icon="qrcode"] {
+	&:before {
+		content: '\e938';
+	}
+}
+
+[data-icon="ticket"] {
+	&:before {
+		content: '\e939';
+	}
+}
+
+[data-icon="cart"] {
+	&:before {
+		content: '\e93a';
+	}
+}
+
+[data-icon="coin-dollar"] {
+	&:before {
+		content: '\e93b';
+	}
+}
+
+[data-icon="coin-euro"] {
+	&:before {
+		content: '\e93c';
+	}
+}
+
+[data-icon="coin-pound"] {
+	&:before {
+		content: '\e93d';
+	}
+}
+
+[data-icon="coin-yen"] {
+	&:before {
+		content: '\e93e';
+	}
+}
+
+[data-icon="credit-card"] {
+	&:before {
+		content: '\e93f';
+	}
+}
+
+[data-icon="calculator"] {
+	&:before {
+		content: '\e940';
+	}
+}
+
+[data-icon="lifebuoy"] {
+	&:before {
+		content: '\e941';
+	}
+}
+
+[data-icon="phone"] {
+	&:before {
+		content: '\e942';
+	}
+}
+
+[data-icon="phone-hang-up"] {
+	&:before {
+		content: '\e943';
+	}
+}
+
+[data-icon="address-book"] {
+	&:before {
+		content: '\e944';
+	}
+}
+
+[data-icon="envelop"] {
+	&:before {
+		content: '\e945';
+	}
+}
+
+[data-icon="pushpin"] {
+	&:before {
+		content: '\e946';
+	}
+}
+
+[data-icon="location"] {
+	&:before {
+		content: '\e947';
+	}
+}
+
+[data-icon="location2"] {
+	&:before {
+		content: '\e948';
+	}
+}
+
+[data-icon="compass"] {
+	&:before {
+		content: '\e949';
+	}
+}
+
+[data-icon="compass2"] {
+	&:before {
+		content: '\e94a';
+	}
+}
+
+[data-icon="map"] {
+	&:before {
+		content: '\e94b';
+	}
+}
+
+[data-icon="map2"] {
+	&:before {
+		content: '\e94c';
+	}
+}
+
+[data-icon="history"] {
+	&:before {
+		content: '\e94d';
+	}
+}
+
+[data-icon="clock"] {
+	&:before {
+		content: '\e94e';
+	}
+}
+
+[data-icon="clock2"] {
+	&:before {
+		content: '\e94f';
+	}
+}
+
+[data-icon="alarm"] {
+	&:before {
+		content: '\e950';
+	}
+}
+
+[data-icon="bell"] {
+	&:before {
+		content: '\e951';
+	}
+}
+
+[data-icon="stopwatch"] {
+	&:before {
+		content: '\e952';
+	}
+}
+
+[data-icon="calendar"] {
+	&:before {
+		content: '\e953';
+	}
+}
+
+[data-icon="printer"] {
+	&:before {
+		content: '\e954';
+	}
+}
+
+[data-icon="keyboard"] {
+	&:before {
+		content: '\e955';
+	}
+}
+
+[data-icon="display"] {
+	&:before {
+		content: '\e956';
+	}
+}
+
+[data-icon="laptop"] {
+	&:before {
+		content: '\e957';
+	}
+}
+
+[data-icon="mobile"] {
+	&:before {
+		content: '\e958';
+	}
+}
+
+[data-icon="mobile2"] {
+	&:before {
+		content: '\e959';
+	}
+}
+
+[data-icon="tablet"] {
+	&:before {
+		content: '\e95a';
+	}
+}
+
+[data-icon="tv"] {
+	&:before {
+		content: '\e95b';
+	}
+}
+
+[data-icon="drawer"] {
+	&:before {
+		content: '\e95c';
+	}
+}
+
+[data-icon="drawer2"] {
+	&:before {
+		content: '\e95d';
+	}
+}
+
+[data-icon="box-add"] {
+	&:before {
+		content: '\e95e';
+	}
+}
+
+[data-icon="box-remove"] {
+	&:before {
+		content: '\e95f';
+	}
+}
+
+[data-icon="download"] {
+	&:before {
+		content: '\e960';
+	}
+}
+
+[data-icon="upload"] {
+	&:before {
+		content: '\e961';
+	}
+}
+
+[data-icon="floppy-disk"] {
+	&:before {
+		content: '\e962';
+	}
+}
+
+[data-icon="drive"] {
+	&:before {
+		content: '\e963';
+	}
+}
+
+[data-icon="database"] {
+	&:before {
+		content: '\e964';
+	}
+}
+
+[data-icon="undo"] {
+	&:before {
+		content: '\e965';
+	}
+}
+
+[data-icon="redo"] {
+	&:before {
+		content: '\e966';
+	}
+}
+
+[data-icon="undo2"] {
+	&:before {
+		content: '\e967';
+	}
+}
+
+[data-icon="redo2"] {
+	&:before {
+		content: '\e968';
+	}
+}
+
+[data-icon="forward"] {
+	&:before {
+		content: '\e969';
+	}
+}
+
+[data-icon="reply"] {
+	&:before {
+		content: '\e96a';
+	}
+}
+
+[data-icon="bubble"] {
+	&:before {
+		content: '\e96b';
+	}
+}
+
+[data-icon="bubbles"] {
+	&:before {
+		content: '\e96c';
+	}
+}
+
+[data-icon="bubbles2"] {
+	&:before {
+		content: '\e96d';
+	}
+}
+
+[data-icon="bubble2"] {
+	&:before {
+		content: '\e96e';
+	}
+}
+
+[data-icon="bubbles3"] {
+	&:before {
+		content: '\e96f';
+	}
+}
+
+[data-icon="bubbles4"] {
+	&:before {
+		content: '\e970';
+	}
+}
+
+[data-icon="user"] {
+	&:before {
+		content: '\e971';
+	}
+}
+
+[data-icon="users"] {
+	&:before {
+		content: '\e972';
+	}
+}
+
+[data-icon="user-plus"] {
+	&:before {
+		content: '\e973';
+	}
+}
+
+[data-icon="user-minus"] {
+	&:before {
+		content: '\e974';
+	}
+}
+
+[data-icon="user-check"] {
+	&:before {
+		content: '\e975';
+	}
+}
+
+[data-icon="user-tie"] {
+	&:before {
+		content: '\e976';
+	}
+}
+
+[data-icon="quotes-left"] {
+	&:before {
+		content: '\e977';
+	}
+}
+
+[data-icon="quotes-right"] {
+	&:before {
+		content: '\e978';
+	}
+}
+
+[data-icon="hour-glass"] {
+	&:before {
+		content: '\e979';
+	}
+}
+
+[data-icon="spinner"] {
+	&:before {
+		content: '\e97a';
+	}
+}
+
+[data-icon="spinner2"] {
+	&:before {
+		content: '\e97b';
+	}
+}
+
+[data-icon="spinner3"] {
+	&:before {
+		content: '\e97c';
+	}
+}
+
+[data-icon="spinner4"] {
+	&:before {
+		content: '\e97d';
+	}
+}
+
+[data-icon="spinner5"] {
+	&:before {
+		content: '\e97e';
+	}
+}
+
+[data-icon="spinner6"] {
+	&:before {
+		content: '\e97f';
+	}
+}
+
+[data-icon="spinner7"] {
+	&:before {
+		content: '\e980';
+	}
+}
+
+[data-icon="spinner8"] {
+	&:before {
+		content: '\e981';
+	}
+}
+
+[data-icon="spinner9"] {
+	&:before {
+		content: '\e982';
+	}
+}
+
+[data-icon="spinner10"] {
+	&:before {
+		content: '\e983';
+	}
+}
+
+[data-icon="spinner11"] {
+	&:before {
+		content: '\e984';
+	}
+}
+
+[data-icon="binoculars"] {
+	&:before {
+		content: '\e985';
+	}
+}
+
+[data-icon="search"] {
+	&:before {
+		content: '\e986';
+	}
+}
+
+[data-icon="zoom-in"] {
+	&:before {
+		content: '\e987';
+	}
+}
+
+[data-icon="zoom-out"] {
+	&:before {
+		content: '\e988';
+	}
+}
+
+[data-icon="enlarge"] {
+	&:before {
+		content: '\e989';
+	}
+}
+
+[data-icon="shrink"] {
+	&:before {
+		content: '\e98a';
+	}
+}
+
+[data-icon="enlarge2"] {
+	&:before {
+		content: '\e98b';
+	}
+}
+
+[data-icon="shrink2"] {
+	&:before {
+		content: '\e98c';
+	}
+}
+
+[data-icon="key"] {
+	&:before {
+		content: '\e98d';
+	}
+}
+
+[data-icon="key2"] {
+	&:before {
+		content: '\e98e';
+	}
+}
+
+[data-icon="lock"] {
+	&:before {
+		content: '\e98f';
+	}
+}
+
+[data-icon="unlocked"] {
+	&:before {
+		content: '\e990';
+	}
+}
+
+[data-icon="wrench"] {
+	&:before {
+		content: '\e991';
+	}
+}
+
+[data-icon="equalizer"] {
+	&:before {
+		content: '\e992';
+	}
+}
+
+[data-icon="equalizer2"] {
+	&:before {
+		content: '\e993';
+	}
+}
+
+[data-icon="cog"] {
+	&:before {
+		content: '\e994';
+	}
+}
+
+[data-icon="cogs"] {
+	&:before {
+		content: '\e995';
+	}
+}
+
+[data-icon="hammer"] {
+	&:before {
+		content: '\e996';
+	}
+}
+
+[data-icon="magic-wand"] {
+	&:before {
+		content: '\e997';
+	}
+}
+
+[data-icon="aid-kit"] {
+	&:before {
+		content: '\e998';
+	}
+}
+
+[data-icon="bug"] {
+	&:before {
+		content: '\e999';
+	}
+}
+
+[data-icon="pie-chart"] {
+	&:before {
+		content: '\e99a';
+	}
+}
+
+[data-icon="stats-dots"] {
+	&:before {
+		content: '\e99b';
+	}
+}
+
+[data-icon="stats-bars"] {
+	&:before {
+		content: '\e99c';
+	}
+}
+
+[data-icon="stats-bars2"] {
+	&:before {
+		content: '\e99d';
+	}
+}
+
+[data-icon="trophy"] {
+	&:before {
+		content: '\e99e';
+	}
+}
+
+[data-icon="gift"] {
+	&:before {
+		content: '\e99f';
+	}
+}
+
+[data-icon="glass"] {
+	&:before {
+		content: '\e9a0';
+	}
+}
+
+[data-icon="glass2"] {
+	&:before {
+		content: '\e9a1';
+	}
+}
+
+[data-icon="mug"] {
+	&:before {
+		content: '\e9a2';
+	}
+}
+
+[data-icon="spoon-knife"] {
+	&:before {
+		content: '\e9a3';
+	}
+}
+
+[data-icon="leaf"] {
+	&:before {
+		content: '\e9a4';
+	}
+}
+
+[data-icon="rocket"] {
+	&:before {
+		content: '\e9a5';
+	}
+}
+
+[data-icon="meter"] {
+	&:before {
+		content: '\e9a6';
+	}
+}
+
+[data-icon="meter2"] {
+	&:before {
+		content: '\e9a7';
+	}
+}
+
+[data-icon="hammer2"] {
+	&:before {
+		content: '\e9a8';
+	}
+}
+
+[data-icon="fire"] {
+	&:before {
+		content: '\e9a9';
+	}
+}
+
+[data-icon="lab"] {
+	&:before {
+		content: '\e9aa';
+	}
+}
+
+[data-icon="magnet"] {
+	&:before {
+		content: '\e9ab';
+	}
+}
+
+[data-icon="bin"] {
+	&:before {
+		content: '\e9ac';
+	}
+}
+
+[data-icon="bin2"] {
+	&:before {
+		content: '\e9ad';
+	}
+}
+
+[data-icon="briefcase"] {
+	&:before {
+		content: '\e9ae';
+	}
+}
+
+[data-icon="airplane"] {
+	&:before {
+		content: '\e9af';
+	}
+}
+
+[data-icon="truck"] {
+	&:before {
+		content: '\e9b0';
+	}
+}
+
+[data-icon="road"] {
+	&:before {
+		content: '\e9b1';
+	}
+}
+
+[data-icon="accessibility"] {
+	&:before {
+		content: '\e9b2';
+	}
+}
+
+[data-icon="target"] {
+	&:before {
+		content: '\e9b3';
+	}
+}
+
+[data-icon="shield"] {
+	&:before {
+		content: '\e9b4';
+	}
+}
+
+[data-icon="power"] {
+	&:before {
+		content: '\e9b5';
+	}
+}
+
+[data-icon="switch"] {
+	&:before {
+		content: '\e9b6';
+	}
+}
+
+[data-icon="power-cord"] {
+	&:before {
+		content: '\e9b7';
+	}
+}
+
+[data-icon="clipboard"] {
+	&:before {
+		content: '\e9b8';
+	}
+}
+
+[data-icon="list-numbered"] {
+	&:before {
+		content: '\e9b9';
+	}
+}
+
+[data-icon="list"] {
+	&:before {
+		content: '\e9ba';
+	}
+}
+
+[data-icon="list2"] {
+	&:before {
+		content: '\e9bb';
+	}
+}
+
+[data-icon="tree"] {
+	&:before {
+		content: '\e9bc';
+	}
+}
+
+[data-icon="menu"] {
+	&:before {
+		content: '\e9bd';
+	}
+}
+
+[data-icon="menu2"] {
+	&:before {
+		content: '\e9be';
+	}
+}
+
+[data-icon="menu3"] {
+	&:before {
+		content: '\e9bf';
+	}
+}
+
+[data-icon="menu4"] {
+	&:before {
+		content: '\e9c0';
+	}
+}
+
+[data-icon="cloud"] {
+	&:before {
+		content: '\e9c1';
+	}
+}
+
+[data-icon="cloud-download"] {
+	&:before {
+		content: '\e9c2';
+	}
+}
+
+[data-icon="cloud-upload"] {
+	&:before {
+		content: '\e9c3';
+	}
+}
+
+[data-icon="cloud-check"] {
+	&:before {
+		content: '\e9c4';
+	}
+}
+
+[data-icon="download2"] {
+	&:before {
+		content: '\e9c5';
+	}
+}
+
+[data-icon="upload2"] {
+	&:before {
+		content: '\e9c6';
+	}
+}
+
+[data-icon="download3"] {
+	&:before {
+		content: '\e9c7';
+	}
+}
+
+[data-icon="upload3"] {
+	&:before {
+		content: '\e9c8';
+	}
+}
+
+[data-icon="sphere"] {
+	&:before {
+		content: '\e9c9';
+	}
+}
+
+[data-icon="earth"] {
+	&:before {
+		content: '\e9ca';
+	}
+}
+
+[data-icon="link"] {
+	&:before {
+		content: '\e9cb';
+	}
+}
+
+[data-icon="flag"] {
+	&:before {
+		content: '\e9cc';
+	}
+}
+
+[data-icon="attachment"] {
+	&:before {
+		content: '\e9cd';
+	}
+}
+
+[data-icon="eye"] {
+	&:before {
+		content: '\e9ce';
+	}
+}
+
+[data-icon="eye-plus"] {
+	&:before {
+		content: '\e9cf';
+	}
+}
+
+[data-icon="eye-minus"] {
+	&:before {
+		content: '\e9d0';
+	}
+}
+
+[data-icon="eye-blocked"] {
+	&:before {
+		content: '\e9d1';
+	}
+}
+
+[data-icon="bookmark"] {
+	&:before {
+		content: '\e9d2';
+	}
+}
+
+[data-icon="bookmarks"] {
+	&:before {
+		content: '\e9d3';
+	}
+}
+
+[data-icon="sun"] {
+	&:before {
+		content: '\e9d4';
+	}
+}
+
+[data-icon="contrast"] {
+	&:before {
+		content: '\e9d5';
+	}
+}
+
+[data-icon="brightness-contrast"] {
+	&:before {
+		content: '\e9d6';
+	}
+}
+
+[data-icon="star-empty"] {
+	&:before {
+		content: '\e9d7';
+	}
+}
+
+[data-icon="star-half"] {
+	&:before {
+		content: '\e9d8';
+	}
+}
+
+[data-icon="star-full"] {
+	&:before {
+		content: '\e9d9';
+	}
+}
+
+[data-icon="heart"] {
+	&:before {
+		content: '\e9da';
+	}
+}
+
+[data-icon="heart-broken"] {
+	&:before {
+		content: '\e9db';
+	}
+}
+
+[data-icon="man"] {
+	&:before {
+		content: '\e9dc';
+	}
+}
+
+[data-icon="woman"] {
+	&:before {
+		content: '\e9dd';
+	}
+}
+
+[data-icon="man-woman"] {
+	&:before {
+		content: '\e9de';
+	}
+}
+
+[data-icon="happy"] {
+	&:before {
+		content: '\e9df';
+	}
+}
+
+[data-icon="happy2"] {
+	&:before {
+		content: '\e9e0';
+	}
+}
+
+[data-icon="smile"] {
+	&:before {
+		content: '\e9e1';
+	}
+}
+
+[data-icon="smile2"] {
+	&:before {
+		content: '\e9e2';
+	}
+}
+
+[data-icon="tongue"] {
+	&:before {
+		content: '\e9e3';
+	}
+}
+
+[data-icon="tongue2"] {
+	&:before {
+		content: '\e9e4';
+	}
+}
+
+[data-icon="sad"] {
+	&:before {
+		content: '\e9e5';
+	}
+}
+
+[data-icon="sad2"] {
+	&:before {
+		content: '\e9e6';
+	}
+}
+
+[data-icon="wink"] {
+	&:before {
+		content: '\e9e7';
+	}
+}
+
+[data-icon="wink2"] {
+	&:before {
+		content: '\e9e8';
+	}
+}
+
+[data-icon="grin"] {
+	&:before {
+		content: '\e9e9';
+	}
+}
+
+[data-icon="grin2"] {
+	&:before {
+		content: '\e9ea';
+	}
+}
+
+[data-icon="cool"] {
+	&:before {
+		content: '\e9eb';
+	}
+}
+
+[data-icon="cool2"] {
+	&:before {
+		content: '\e9ec';
+	}
+}
+
+[data-icon="angry"] {
+	&:before {
+		content: '\e9ed';
+	}
+}
+
+[data-icon="angry2"] {
+	&:before {
+		content: '\e9ee';
+	}
+}
+
+[data-icon="evil"] {
+	&:before {
+		content: '\e9ef';
+	}
+}
+
+[data-icon="evil2"] {
+	&:before {
+		content: '\e9f0';
+	}
+}
+
+[data-icon="shocked"] {
+	&:before {
+		content: '\e9f1';
+	}
+}
+
+[data-icon="shocked2"] {
+	&:before {
+		content: '\e9f2';
+	}
+}
+
+[data-icon="baffled"] {
+	&:before {
+		content: '\e9f3';
+	}
+}
+
+[data-icon="baffled2"] {
+	&:before {
+		content: '\e9f4';
+	}
+}
+
+[data-icon="confused"] {
+	&:before {
+		content: '\e9f5';
+	}
+}
+
+[data-icon="confused2"] {
+	&:before {
+		content: '\e9f6';
+	}
+}
+
+[data-icon="neutral"] {
+	&:before {
+		content: '\e9f7';
+	}
+}
+
+[data-icon="neutral2"] {
+	&:before {
+		content: '\e9f8';
+	}
+}
+
+[data-icon="hipster"] {
+	&:before {
+		content: '\e9f9';
+	}
+}
+
+[data-icon="hipster2"] {
+	&:before {
+		content: '\e9fa';
+	}
+}
+
+[data-icon="wondering"] {
+	&:before {
+		content: '\e9fb';
+	}
+}
+
+[data-icon="wondering2"] {
+	&:before {
+		content: '\e9fc';
+	}
+}
+
+[data-icon="sleepy"] {
+	&:before {
+		content: '\e9fd';
+	}
+}
+
+[data-icon="sleepy2"] {
+	&:before {
+		content: '\e9fe';
+	}
+}
+
+[data-icon="frustrated"] {
+	&:before {
+		content: '\e9ff';
+	}
+}
+
+[data-icon="frustrated2"] {
+	&:before {
+		content: '\ea00';
+	}
+}
+
+[data-icon="crying"] {
+	&:before {
+		content: '\ea01';
+	}
+}
+
+[data-icon="crying2"] {
+	&:before {
+		content: '\ea02';
+	}
+}
+
+[data-icon="point-up"] {
+	&:before {
+		content: '\ea03';
+	}
+}
+
+[data-icon="point-right"] {
+	&:before {
+		content: '\ea04';
+	}
+}
+
+[data-icon="point-down"] {
+	&:before {
+		content: '\ea05';
+	}
+}
+
+[data-icon="point-left"] {
+	&:before {
+		content: '\ea06';
+	}
+}
+
+[data-icon="warning"] {
+	&:before {
+		content: '\ea07';
+	}
+}
+
+[data-icon="notification"] {
+	&:before {
+		content: '\ea08';
+	}
+}
+
+[data-icon="question"] {
+	&:before {
+		content: '\ea09';
+	}
+}
+
+[data-icon="plus"] {
+	&:before {
+		content: '\ea0a';
+	}
+}
+
+[data-icon="minus"] {
+	&:before {
+		content: '\ea0b';
+	}
+}
+
+[data-icon="info"] {
+	&:before {
+		content: '\ea0c';
+	}
+}
+
+[data-icon="cancel-circle"] {
+	&:before {
+		content: '\ea0d';
+	}
+}
+
+[data-icon="blocked"] {
+	&:before {
+		content: '\ea0e';
+	}
+}
+
+[data-icon="cross"] {
+	&:before {
+		content: '\ea0f';
+	}
+}
+
+[data-icon="checkmark"] {
+	&:before {
+		content: '\ea10';
+	}
+}
+
+[data-icon="checkmark2"] {
+	&:before {
+		content: '\ea11';
+	}
+}
+
+[data-icon="spell-check"] {
+	&:before {
+		content: '\ea12';
+	}
+}
+
+[data-icon="enter"] {
+	&:before {
+		content: '\ea13';
+	}
+}
+
+[data-icon="exit"] {
+	&:before {
+		content: '\ea14';
+	}
+}
+
+[data-icon="play2"] {
+	&:before {
+		content: '\ea15';
+	}
+}
+
+[data-icon="pause"] {
+	&:before {
+		content: '\ea16';
+	}
+}
+
+[data-icon="stop"] {
+	&:before {
+		content: '\ea17';
+	}
+}
+
+[data-icon="previous"] {
+	&:before {
+		content: '\ea18';
+	}
+}
+
+[data-icon="next"] {
+	&:before {
+		content: '\ea19';
+	}
+}
+
+[data-icon="backward"] {
+	&:before {
+		content: '\ea1a';
+	}
+}
+
+[data-icon="forward2"] {
+	&:before {
+		content: '\ea1b';
+	}
+}
+
+[data-icon="play3"] {
+	&:before {
+		content: '\ea1c';
+	}
+}
+
+[data-icon="pause2"] {
+	&:before {
+		content: '\ea1d';
+	}
+}
+
+[data-icon="stop2"] {
+	&:before {
+		content: '\ea1e';
+	}
+}
+
+[data-icon="backward2"] {
+	&:before {
+		content: '\ea1f';
+	}
+}
+
+[data-icon="forward3"] {
+	&:before {
+		content: '\ea20';
+	}
+}
+
+[data-icon="first"] {
+	&:before {
+		content: '\ea21';
+	}
+}
+
+[data-icon="last"] {
+	&:before {
+		content: '\ea22';
+	}
+}
+
+[data-icon="previous2"] {
+	&:before {
+		content: '\ea23';
+	}
+}
+
+[data-icon="next2"] {
+	&:before {
+		content: '\ea24';
+	}
+}
+
+[data-icon="eject"] {
+	&:before {
+		content: '\ea25';
+	}
+}
+
+[data-icon="volume-high"] {
+	&:before {
+		content: '\ea26';
+	}
+}
+
+[data-icon="volume-medium"] {
+	&:before {
+		content: '\ea27';
+	}
+}
+
+[data-icon="volume-low"] {
+	&:before {
+		content: '\ea28';
+	}
+}
+
+[data-icon="volume-mute"] {
+	&:before {
+		content: '\ea29';
+	}
+}
+
+[data-icon="volume-mute2"] {
+	&:before {
+		content: '\ea2a';
+	}
+}
+
+[data-icon="volume-increase"] {
+	&:before {
+		content: '\ea2b';
+	}
+}
+
+[data-icon="volume-decrease"] {
+	&:before {
+		content: '\ea2c';
+	}
+}
+
+[data-icon="loop"] {
+	&:before {
+		content: '\ea2d';
+	}
+}
+
+[data-icon="loop2"] {
+	&:before {
+		content: '\ea2e';
+	}
+}
+
+[data-icon="infinite"] {
+	&:before {
+		content: '\ea2f';
+	}
+}
+
+[data-icon="shuffle"] {
+	&:before {
+		content: '\ea30';
+	}
+}
+
+[data-icon="arrow-up-left"] {
+	&:before {
+		content: '\ea31';
+	}
+}
+
+[data-icon="arrow-up"] {
+	&:before {
+		content: '\ea32';
+	}
+}
+
+[data-icon="arrow-up-right"] {
+	&:before {
+		content: '\ea33';
+	}
+}
+
+[data-icon="arrow-right"] {
+	&:before {
+		content: '\ea34';
+	}
+}
+
+[data-icon="arrow-down-right"] {
+	&:before {
+		content: '\ea35';
+	}
+}
+
+[data-icon="arrow-down"] {
+	&:before {
+		content: '\ea36';
+	}
+}
+
+[data-icon="arrow-down-left"] {
+	&:before {
+		content: '\ea37';
+	}
+}
+
+[data-icon="arrow-left"] {
+	&:before {
+		content: '\ea38';
+	}
+}
+
+[data-icon="arrow-up-left2"] {
+	&:before {
+		content: '\ea39';
+	}
+}
+
+[data-icon="arrow-up2"] {
+	&:before {
+		content: '\ea3a';
+	}
+}
+
+[data-icon="arrow-up-right2"] {
+	&:before {
+		content: '\ea3b';
+	}
+}
+
+[data-icon="arrow-right2"] {
+	&:before {
+		content: '\ea3c';
+	}
+}
+
+[data-icon="arrow-down-right2"] {
+	&:before {
+		content: '\ea3d';
+	}
+}
+
+[data-icon="arrow-down2"] {
+	&:before {
+		content: '\ea3e';
+	}
+}
+
+[data-icon="arrow-down-left2"] {
+	&:before {
+		content: '\ea3f';
+	}
+}
+
+[data-icon="arrow-left2"] {
+	&:before {
+		content: '\ea40';
+	}
+}
+
+[data-icon="circle-up"] {
+	&:before {
+		content: '\ea41';
+	}
+}
+
+[data-icon="circle-right"] {
+	&:before {
+		content: '\ea42';
+	}
+}
+
+[data-icon="circle-down"] {
+	&:before {
+		content: '\ea43';
+	}
+}
+
+[data-icon="circle-left"] {
+	&:before {
+		content: '\ea44';
+	}
+}
+
+[data-icon="tab"] {
+	&:before {
+		content: '\ea45';
+	}
+}
+
+[data-icon="move-up"] {
+	&:before {
+		content: '\ea46';
+	}
+}
+
+[data-icon="move-down"] {
+	&:before {
+		content: '\ea47';
+	}
+}
+
+[data-icon="sort-alpha-asc"] {
+	&:before {
+		content: '\ea48';
+	}
+}
+
+[data-icon="sort-alpha-desc"] {
+	&:before {
+		content: '\ea49';
+	}
+}
+
+[data-icon="sort-numeric-asc"] {
+	&:before {
+		content: '\ea4a';
+	}
+}
+
+[data-icon="sort-numberic-desc"] {
+	&:before {
+		content: '\ea4b';
+	}
+}
+
+[data-icon="sort-amount-asc"] {
+	&:before {
+		content: '\ea4c';
+	}
+}
+
+[data-icon="sort-amount-desc"] {
+	&:before {
+		content: '\ea4d';
+	}
+}
+
+[data-icon="command"] {
+	&:before {
+		content: '\ea4e';
+	}
+}
+
+[data-icon="shift"] {
+	&:before {
+		content: '\ea4f';
+	}
+}
+
+[data-icon="ctrl"] {
+	&:before {
+		content: '\ea50';
+	}
+}
+
+[data-icon="opt"] {
+	&:before {
+		content: '\ea51';
+	}
+}
+
+[data-icon="checkbox-checked"] {
+	&:before {
+		content: '\ea52';
+	}
+}
+
+[data-icon="checkbox-unchecked"] {
+	&:before {
+		content: '\ea53';
+	}
+}
+
+[data-icon="radio-checked"] {
+	&:before {
+		content: '\ea54';
+	}
+}
+
+[data-icon="radio-checked2"] {
+	&:before {
+		content: '\ea55';
+	}
+}
+
+[data-icon="radio-unchecked"] {
+	&:before {
+		content: '\ea56';
+	}
+}
+
+[data-icon="crop"] {
+	&:before {
+		content: '\ea57';
+	}
+}
+
+[data-icon="make-group"] {
+	&:before {
+		content: '\ea58';
+	}
+}
+
+[data-icon="ungroup"] {
+	&:before {
+		content: '\ea59';
+	}
+}
+
+[data-icon="scissors"] {
+	&:before {
+		content: '\ea5a';
+	}
+}
+
+[data-icon="filter"] {
+	&:before {
+		content: '\ea5b';
+	}
+}
+
+[data-icon="font"] {
+	&:before {
+		content: '\ea5c';
+	}
+}
+
+[data-icon="ligature"] {
+	&:before {
+		content: '\ea5d';
+	}
+}
+
+[data-icon="ligature2"] {
+	&:before {
+		content: '\ea5e';
+	}
+}
+
+[data-icon="text-height"] {
+	&:before {
+		content: '\ea5f';
+	}
+}
+
+[data-icon="text-width"] {
+	&:before {
+		content: '\ea60';
+	}
+}
+
+[data-icon="font-size"] {
+	&:before {
+		content: '\ea61';
+	}
+}
+
+[data-icon="bold"] {
+	&:before {
+		content: '\ea62';
+	}
+}
+
+[data-icon="underline"] {
+	&:before {
+		content: '\ea63';
+	}
+}
+
+[data-icon="italic"] {
+	&:before {
+		content: '\ea64';
+	}
+}
+
+[data-icon="strikethrough"] {
+	&:before {
+		content: '\ea65';
+	}
+}
+
+[data-icon="omega"] {
+	&:before {
+		content: '\ea66';
+	}
+}
+
+[data-icon="sigma"] {
+	&:before {
+		content: '\ea67';
+	}
+}
+
+[data-icon="page-break"] {
+	&:before {
+		content: '\ea68';
+	}
+}
+
+[data-icon="superscript"] {
+	&:before {
+		content: '\ea69';
+	}
+}
+
+[data-icon="subscript"] {
+	&:before {
+		content: '\ea6a';
+	}
+}
+
+[data-icon="superscript2"] {
+	&:before {
+		content: '\ea6b';
+	}
+}
+
+[data-icon="subscript2"] {
+	&:before {
+		content: '\ea6c';
+	}
+}
+
+[data-icon="text-color"] {
+	&:before {
+		content: '\ea6d';
+	}
+}
+
+[data-icon="pagebreak"] {
+	&:before {
+		content: '\ea6e';
+	}
+}
+
+[data-icon="clear-formatting"] {
+	&:before {
+		content: '\ea6f';
+	}
+}
+
+[data-icon="table"] {
+	&:before {
+		content: '\ea70';
+	}
+}
+
+[data-icon="table2"] {
+	&:before {
+		content: '\ea71';
+	}
+}
+
+[data-icon="insert-template"] {
+	&:before {
+		content: '\ea72';
+	}
+}
+
+[data-icon="pilcrow"] {
+	&:before {
+		content: '\ea73';
+	}
+}
+
+[data-icon="ltr"] {
+	&:before {
+		content: '\ea74';
+	}
+}
+
+[data-icon="rtl"] {
+	&:before {
+		content: '\ea75';
+	}
+}
+
+[data-icon="section"] {
+	&:before {
+		content: '\ea76';
+	}
+}
+
+[data-icon="paragraph-left"] {
+	&:before {
+		content: '\ea77';
+	}
+}
+
+[data-icon="paragraph-center"] {
+	&:before {
+		content: '\ea78';
+	}
+}
+
+[data-icon="paragraph-right"] {
+	&:before {
+		content: '\ea79';
+	}
+}
+
+[data-icon="paragraph-justify"] {
+	&:before {
+		content: '\ea7a';
+	}
+}
+
+[data-icon="indent-increase"] {
+	&:before {
+		content: '\ea7b';
+	}
+}
+
+[data-icon="indent-decrease"] {
+	&:before {
+		content: '\ea7c';
+	}
+}
+
+[data-icon="share"] {
+	&:before {
+		content: '\ea7d';
+	}
+}
+
+[data-icon="new-tab"] {
+	&:before {
+		content: '\ea7e';
+	}
+}
+
+[data-icon="embed"] {
+	&:before {
+		content: '\ea7f';
+	}
+}
+
+[data-icon="embed2"] {
+	&:before {
+		content: '\ea80';
+	}
+}
+
+[data-icon="terminal"] {
+	&:before {
+		content: '\ea81';
+	}
+}
+
+[data-icon="share2"] {
+	&:before {
+		content: '\ea82';
+	}
+}
+
+[data-icon="mail"] {
+	&:before {
+		content: '\ea83';
+	}
+}
+
+[data-icon="mail2"] {
+	&:before {
+		content: '\ea84';
+	}
+}
+
+[data-icon="mail3"] {
+	&:before {
+		content: '\ea85';
+	}
+}
+
+[data-icon="mail4"] {
+	&:before {
+		content: '\ea86';
+	}
+}
+
+[data-icon="amazon"] {
+	&:before {
+		content: '\ea87';
+	}
+}
+
+[data-icon="google"] {
+	&:before {
+		content: '\ea88';
+	}
+}
+
+[data-icon="google2"] {
+	&:before {
+		content: '\ea89';
+	}
+}
+
+[data-icon="google3"] {
+	&:before {
+		content: '\ea8a';
+	}
+}
+
+[data-icon="google-plus"] {
+	&:before {
+		content: '\ea8b';
+	}
+}
+
+[data-icon="google-plus2"] {
+	&:before {
+		content: '\ea8c';
+	}
+}
+
+[data-icon="google-plus3"] {
+	&:before {
+		content: '\ea8d';
+	}
+}
+
+[data-icon="hangouts"] {
+	&:before {
+		content: '\ea8e';
+	}
+}
+
+[data-icon="google-drive"] {
+	&:before {
+		content: '\ea8f';
+	}
+}
+
+[data-icon="facebook"] {
+	&:before {
+		content: '\ea90';
+	}
+}
+
+[data-icon="facebook2"] {
+	&:before {
+		content: '\ea91';
+	}
+}
+
+[data-icon="instagram"] {
+	&:before {
+		content: '\ea92';
+	}
+}
+
+[data-icon="whatsapp"] {
+	&:before {
+		content: '\ea93';
+	}
+}
+
+[data-icon="spotify"] {
+	&:before {
+		content: '\ea94';
+	}
+}
+
+[data-icon="telegram"] {
+	&:before {
+		content: '\ea95';
+	}
+}
+
+[data-icon="twitter"] {
+	&:before {
+		content: '\ea96';
+	}
+}
+
+[data-icon="vine"] {
+	&:before {
+		content: '\ea97';
+	}
+}
+
+[data-icon="vk"] {
+	&:before {
+		content: '\ea98';
+	}
+}
+
+[data-icon="renren"] {
+	&:before {
+		content: '\ea99';
+	}
+}
+
+[data-icon="sina-weibo"] {
+	&:before {
+		content: '\ea9a';
+	}
+}
+
+[data-icon="rss"] {
+	&:before {
+		content: '\ea9b';
+	}
+}
+
+[data-icon="rss2"] {
+	&:before {
+		content: '\ea9c';
+	}
+}
+
+[data-icon="youtube"] {
+	&:before {
+		content: '\ea9d';
+	}
+}
+
+[data-icon="youtube2"] {
+	&:before {
+		content: '\ea9e';
+	}
+}
+
+[data-icon="twitch"] {
+	&:before {
+		content: '\ea9f';
+	}
+}
+
+[data-icon="vimeo"] {
+	&:before {
+		content: '\eaa0';
+	}
+}
+
+[data-icon="vimeo2"] {
+	&:before {
+		content: '\eaa1';
+	}
+}
+
+[data-icon="lanyrd"] {
+	&:before {
+		content: '\eaa2';
+	}
+}
+
+[data-icon="flickr"] {
+	&:before {
+		content: '\eaa3';
+	}
+}
+
+[data-icon="flickr2"] {
+	&:before {
+		content: '\eaa4';
+	}
+}
+
+[data-icon="flickr3"] {
+	&:before {
+		content: '\eaa5';
+	}
+}
+
+[data-icon="flickr4"] {
+	&:before {
+		content: '\eaa6';
+	}
+}
+
+[data-icon="dribbble"] {
+	&:before {
+		content: '\eaa7';
+	}
+}
+
+[data-icon="behance"] {
+	&:before {
+		content: '\eaa8';
+	}
+}
+
+[data-icon="behance2"] {
+	&:before {
+		content: '\eaa9';
+	}
+}
+
+[data-icon="deviantart"] {
+	&:before {
+		content: '\eaaa';
+	}
+}
+
+[data-icon="500px"] {
+	&:before {
+		content: '\eaab';
+	}
+}
+
+[data-icon="steam"] {
+	&:before {
+		content: '\eaac';
+	}
+}
+
+[data-icon="steam2"] {
+	&:before {
+		content: '\eaad';
+	}
+}
+
+[data-icon="dropbox"] {
+	&:before {
+		content: '\eaae';
+	}
+}
+
+[data-icon="onedrive"] {
+	&:before {
+		content: '\eaaf';
+	}
+}
+
+[data-icon="github"] {
+	&:before {
+		content: '\eab0';
+	}
+}
+
+[data-icon="npm"] {
+	&:before {
+		content: '\eab1';
+	}
+}
+
+[data-icon="basecamp"] {
+	&:before {
+		content: '\eab2';
+	}
+}
+
+[data-icon="trello"] {
+	&:before {
+		content: '\eab3';
+	}
+}
+
+[data-icon="wordpress"] {
+	&:before {
+		content: '\eab4';
+	}
+}
+
+[data-icon="joomla"] {
+	&:before {
+		content: '\eab5';
+	}
+}
+
+[data-icon="ello"] {
+	&:before {
+		content: '\eab6';
+	}
+}
+
+[data-icon="blogger"] {
+	&:before {
+		content: '\eab7';
+	}
+}
+
+[data-icon="blogger2"] {
+	&:before {
+		content: '\eab8';
+	}
+}
+
+[data-icon="tumblr"] {
+	&:before {
+		content: '\eab9';
+	}
+}
+
+[data-icon="tumblr2"] {
+	&:before {
+		content: '\eaba';
+	}
+}
+
+[data-icon="yahoo"] {
+	&:before {
+		content: '\eabb';
+	}
+}
+
+[data-icon="yahoo2"] {
+	&:before {
+		content: '\eabc';
+	}
+}
+
+[data-icon="tux"] {
+	&:before {
+		content: '\eabd';
+	}
+}
+
+[data-icon="appleinc"] {
+	&:before {
+		content: '\eabe';
+	}
+}
+
+[data-icon="finder"] {
+	&:before {
+		content: '\eabf';
+	}
+}
+
+[data-icon="android"] {
+	&:before {
+		content: '\eac0';
+	}
+}
+
+[data-icon="windows"] {
+	&:before {
+		content: '\eac1';
+	}
+}
+
+[data-icon="windows8"] {
+	&:before {
+		content: '\eac2';
+	}
+}
+
+[data-icon="soundcloud"] {
+	&:before {
+		content: '\eac3';
+	}
+}
+
+[data-icon="soundcloud2"] {
+	&:before {
+		content: '\eac4';
+	}
+}
+
+[data-icon="skype"] {
+	&:before {
+		content: '\eac5';
+	}
+}
+
+[data-icon="reddit"] {
+	&:before {
+		content: '\eac6';
+	}
+}
+
+[data-icon="hackernews"] {
+	&:before {
+		content: '\eac7';
+	}
+}
+
+[data-icon="wikipedia"] {
+	&:before {
+		content: '\eac8';
+	}
+}
+
+[data-icon="linkedin"] {
+	&:before {
+		content: '\eac9';
+	}
+}
+
+[data-icon="linkedin2"] {
+	&:before {
+		content: '\eaca';
+	}
+}
+
+[data-icon="lastfm"] {
+	&:before {
+		content: '\eacb';
+	}
+}
+
+[data-icon="lastfm2"] {
+	&:before {
+		content: '\eacc';
+	}
+}
+
+[data-icon="delicious"] {
+	&:before {
+		content: '\eacd';
+	}
+}
+
+[data-icon="stumbleupon"] {
+	&:before {
+		content: '\eace';
+	}
+}
+
+[data-icon="stumbleupon2"] {
+	&:before {
+		content: '\eacf';
+	}
+}
+
+[data-icon="stackoverflow"] {
+	&:before {
+		content: '\ead0';
+	}
+}
+
+[data-icon="pinterest"] {
+	&:before {
+		content: '\ead1';
+	}
+}
+
+[data-icon="pinterest2"] {
+	&:before {
+		content: '\ead2';
+	}
+}
+
+[data-icon="xing"] {
+	&:before {
+		content: '\ead3';
+	}
+}
+
+[data-icon="xing2"] {
+	&:before {
+		content: '\ead4';
+	}
+}
+
+[data-icon="flattr"] {
+	&:before {
+		content: '\ead5';
+	}
+}
+
+[data-icon="foursquare"] {
+	&:before {
+		content: '\ead6';
+	}
+}
+
+[data-icon="yelp"] {
+	&:before {
+		content: '\ead7';
+	}
+}
+
+[data-icon="paypal"] {
+	&:before {
+		content: '\ead8';
+	}
+}
+
+[data-icon="chrome"] {
+	&:before {
+		content: '\ead9';
+	}
+}
+
+[data-icon="firefox"] {
+	&:before {
+		content: '\eada';
+	}
+}
+
+[data-icon="IE"] {
+	&:before {
+		content: '\eadb';
+	}
+}
+
+[data-icon="edge"] {
+	&:before {
+		content: '\eadc';
+	}
+}
+
+[data-icon="safari"] {
+	&:before {
+		content: '\eadd';
+	}
+}
+
+[data-icon="opera"] {
+	&:before {
+		content: '\eade';
+	}
+}
+
+[data-icon="file-pdf"] {
+	&:before {
+		content: '\eadf';
+	}
+}
+
+[data-icon="file-openoffice"] {
+	&:before {
+		content: '\eae0';
+	}
+}
+
+[data-icon="file-word"] {
+	&:before {
+		content: '\eae1';
+	}
+}
+
+[data-icon="file-excel"] {
+	&:before {
+		content: '\eae2';
+	}
+}
+
+[data-icon="libreoffice"] {
+	&:before {
+		content: '\eae3';
+	}
+}
+
+[data-icon="html-five"] {
+	&:before {
+		content: '\eae4';
+	}
+}
+
+[data-icon="html-five2"] {
+	&:before {
+		content: '\eae5';
+	}
+}
+
+[data-icon="css3"] {
+	&:before {
+		content: '\eae6';
+	}
+}
+
+[data-icon="git"] {
+	&:before {
+		content: '\eae7';
+	}
+}
+
+[data-icon="codepen"] {
+	&:before {
+		content: '\eae8';
+	}
+}
+
+[data-icon="svg"] {
+	&:before {
+		content: '\eae9';
+	}
+}
+
+[data-icon="keyboard-arrow-up"] {
+	&:before {
+		content: '\eaeb';
+	}
+}
+
+[data-icon="keyboard-arrow-right"] {
+	&:before {
+		content: '\eaec';
+	}
+}
+
+[data-icon="keyboard-arrow-left"] {
+	&:before {
+		content: '\eaed';
+	}
+}
+
+[data-icon="keyboard-arrow-down"] {
+	&:before {
+		content: '\eaee';
+	}
+}
+
+[data-icon="clear"] {
+	&:before {
+		content: '\eaef';
+	}
+}
