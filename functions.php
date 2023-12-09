@@ -444,3 +444,645 @@ function fc_theme_add_custom_post_type_caps() {
 }
 
 add_action( 'init', 'fc_theme_add_custom_post_type_caps' );
+
+// Set Wordpress archive query args
+
+function fc_theme_archive_query_args( $query ) {
+	if ( !is_admin() && $query->is_front_page() && $query->is_main_query() ) {
+		$query->set( 'post_type', 'post' );
+		$query->set( 'posts_per_page', -1 );
+		$query->set( 'orderby', 'date' );
+		$query->set( 'order', 'DESC' );
+	}
+}
+
+add_action( 'pre_get_posts', 'fc_theme_archive_query_args' );
+	
+// Register Wordpress custom menu
+
+function fc_theme_register_custom_menus() {
+	register_nav_menu( 'main-menu', esc_html( btb__( 'Main-Menü' ) ) );
+	register_nav_menu( 'footer-menu', esc_html( btb__( 'Footer-Menü' ) ) );
+}
+
+add_action( 'init', 'fc_theme_register_custom_menus' );
+
+// Add active class to Wordpress menus
+
+function fc_theme_add_menu_css_class( $classes, $item ) {
+	if ( in_array( 'current-menu-item', $classes ) || in_array( 'current-menu-ancestor', $classes ) ) {
+		$classes[] = 'active';
+	}
+
+	return $classes;
+}
+
+add_filter( 'nav_menu_css_class', 'fc_theme_add_menu_css_class', 10, 2 );
+
+// Remove empty Wordpress menu links
+
+function fc_theme_remove_empty_menu_links( $menu ) {
+	return preg_replace( '/<a href=\"#\">(.+?)<\/a>/is', '<span class="sub-menu-parent" >$1</span>', $menu );
+}
+
+add_filter( 'wp_nav_menu_items', 'fc_theme_remove_empty_menu_links' );
+
+// Set default Wordpress image size
+
+update_option( 'thumbnail_size_w', '150', 'yes' );
+update_option( 'thumbnail_size_h', '150', 'yes' );
+update_option( 'thumbnail_crop', '0', 'yes' );
+update_option( 'medium_size_w', '480', 'yes' );
+update_option( 'medium_size_h', '0', 'yes' );
+update_option( 'medium_large_size_w', '768', 'yes' );
+update_option( 'medium_large_size_h', '0', 'yes' );
+update_option( 'large_size_w', '1024', 'yes' );
+update_option( 'large_size_h', '0', 'yes' );
+
+// Add custom Wordpress image size
+
+add_image_size( 'lazy-loading', 50, 50, false );
+
+// Generate responsive Wordpress images
+
+function fc_theme_responsive_image( $attachment_id, $size, $max_width ) {
+	return sprintf( 
+		'src="%s" data-src="%s" data-srcset="%s" data-sizes="(max-width:%4$s) 100vw, %4$s"', 
+		esc_url( wp_get_attachment_image_url( $attachment_id, 'lazy-loading' ) ), 
+		esc_url( wp_get_attachment_image_url( $attachment_id, $size ) ), 
+		esc_attr( wp_get_attachment_image_srcset( $attachment_id, $size ) ), 
+		esc_attr( $max_width ) 
+	);
+}
+
+// Set maximum Wordpress image size
+
+function fc_theme_max_image_size() {
+	return 2048;
+}
+add_filter( 'fc_theme_responsive_image', 'fc_theme_max_image_size', 10, 2 );
+
+// Change default Wordpress outgoing sender information
+
+function fc_theme_modify_sender_email( $original_email_address ) {
+	$site_url = parse_url( get_bloginfo( 'url' ) );
+	$sender_email = sanitize_email( 'no-reply@' . preg_replace( '#^www\.(.+\.)#i', '$1', $site_url[ 'host' ] ) );
+	return $sender_email;
+}
+add_filter( 'wp_mail_from', 'fc_theme_modify_sender_email' );
+
+function fc_theme_modify_sender_name( $original_email_from ) {
+	$sender_name = sanitize_text_field( get_bloginfo( 'name' ) );
+	return $sender_name;
+}
+add_filter( 'wp_mail_from_name', 'fc_theme_modify_sender_name' );
+
+// Add custom Wordpress shortcode
+
+function fc_theme_add_custom_shortcode( $atts ) {
+	$shortcode_atts = shortcode_atts( array(
+		'type' => false
+	), $atts );
+	if ( !empty( $shortcode_atts[ 'type' ] ) ) {
+		$content = get_template_part( 'template-parts/contents/shortcode', $shortcode_atts[ 'type' ], $shortcode_atts );
+	}
+	return $content;
+}
+add_shortcode( 'fc_shortcode', 'fc_theme_add_custom_shortcode' );
+
+// Set WP-SCSS options
+
+function fc_theme_wpscss_compile_options() {
+	if ( !empty( $user = wp_get_current_user() ) ) {
+		if ( !is_admin() && $user->user_login === 'admin' ) {
+			define( 'WP_SCSS_ALWAYS_RECOMPILE', true );
+		}
+	}
+}
+add_action( 'init', 'fc_theme_wpscss_compile_options' );
+$wpscss_options_defaults = array(
+	'base_compiling_folder' => ( is_child_theme() ? 'Child Theme' : 'Current Theme' ),
+	'scss_dir' => '/assets/scss/',
+	'css_dir' => '/assets/css/',
+	'compiling_options' => 'ScssPhp\ScssPhp\Formatter\Compressed',
+	'sourcemap_options' => 'SOURCE_MAP_NONE',
+	'errors' => 'show',
+	'enqueue' => 0,
+	'recompile' => 0
+);
+update_option( 'wpscss_options', $wpscss_options_defaults, true );
+
+// Save/Update ACF JSON file
+
+function fc_theme_save_acf_json( $path ) {
+	$path = trailingslashit( get_template_directory() ) . 'includes/advanced-custom-fields';
+	return $path;
+}
+add_filter( 'acf/settings/save_json', 'fc_theme_save_acf_json' );
+
+// Load ACF JSON file
+
+function fc_theme_load_acf_json( $paths ) {
+	$paths[] = trailingslashit( get_template_directory() ) . 'includes/advanced-custom-fields';
+	return $paths;
+}
+add_filter( 'acf/settings/load_json', 'fc_theme_load_acf_json' );
+
+// Register ACF options page
+
+function fc_theme_register_acf_options() {
+	if ( function_exists( 'acf_add_options_page' ) ) {
+		$options_pages = array(
+			array(
+				'page_title' => esc_html( btb__( 'Theme-Einstellungen' ) ),
+				'menu_title' => esc_html( btb__( 'Einstellungen' ) ),
+				'menu_slug' => 'theme-settings',
+				'parent_slug' => 'themes.php',
+				'icon_url' => '',
+				'update_button' => esc_html( btb__( 'Aktualisieren' ) ),
+				'updated_message' => esc_html( btb__( 'Einstellungen aktualisiert' ) )
+			),
+			array(
+				'page_title' => esc_html( btb__( 'Formular-Einstellungen' ) ),
+				'menu_title' => esc_html( btb__( 'Einstellungen' ) ),
+				'menu_slug' => 'form-settings',
+				'parent_slug' => 'edit.php?post_type=forms',
+				'icon_url' => '',
+				'update_button' => esc_html( btb__( 'Aktualisieren' ) ),
+				'updated_message' => esc_html( btb__( 'Einstellungen aktualisiert' ) )
+			)
+		);
+		foreach ( $options_pages as $options_page ) {
+			acf_add_options_page( $options_page );
+		}
+	}
+}
+add_action( 'acf/init', 'fc_theme_register_acf_options' );
+
+// Edit ACF WYSIWYG-Editor fields
+
+function fc_theme_acf_wysiwyg_editor( $toolbars ) {
+	if ( ( $key = array_search( 'numlist', $toolbars[ 'Full' ][ 1 ] ) ) != false ) {
+		unset( $toolbars[ 'Full' ][ 1 ][ $key ] );
+	}
+	if ( ( $key = array_search( 'blockquote', $toolbars[ 'Full' ][ 1 ] ) ) != false ) {
+		unset( $toolbars[ 'Full' ][ 1 ][ $key ] );
+	}
+	if ( ( $key = array_search( 'wp_more', $toolbars[ 'Full' ][ 1 ] ) ) != false ) {
+		unset( $toolbars[ 'Full' ][ 1 ][ $key ] );
+	}
+	if ( ( $key = array_search( 'indent', $toolbars[ 'Full' ][ 2 ] ) ) != false ) {
+		unset( $toolbars[ 'Full' ][ 2 ][ $key ] );
+	}
+	if ( ( $key = array_search( 'outdent', $toolbars[ 'Full' ][ 2 ] ) ) != false ) {
+		unset( $toolbars[ 'Full' ][ 2 ][ $key ] );
+	}
+	if ( ( $key = array_search( 'wp_help', $toolbars[ 'Full' ][ 2 ] ) ) != false ) {
+		unset( $toolbars[ 'Full' ][ 2 ][ $key ] );
+	}
+	return $toolbars;
+}
+add_filter( 'acf/fields/wysiwyg/toolbars', 'fc_theme_acf_wysiwyg_editor' );
+
+add_filter( 'tiny_mce_before_init', function( $settings ) {
+	$settings[ 'block_formats' ] = 'Paragraph=p;Heading 1=h1;Heading 2=h2;Heading 3=h3';
+	return $settings;
+} );
+
+add_filter( 'quicktags_settings', function( $qtInit ) {
+	$qtInit[ 'buttons' ] = 'strong,em,link,ul,li,close,fullscreen';
+	return $qtInit;
+} );
+
+// Allow specific Gutenberg blocks
+
+function fc_theme_allowed_block_types() {
+	return array(
+		'acf/button',
+		'acf/form',
+		//'acf/hero',
+		//'acf/icon',
+		'acf/image',
+		'acf/image-gallery',
+		'acf/image',
+		'acf/paragraph',
+		'acf/paragraph-image',
+		'acf/posts',
+		'acf/quote',
+		'acf/separator',
+		'acf/shortcode',
+		'acf/video',
+		'core/block'
+	);
+}
+if ( !function_exists( 'fc_theme_child_allowed_block_types' ) ) {
+	add_filter( 'allowed_block_types_all', 'fc_theme_allowed_block_types' );
+}
+
+// Lock ACF field for Wordpress non-admin users
+
+function fc_theme_lock_acf_field( $field ) {
+	$user = wp_get_current_user();
+	if ( empty( $user->roles ) || !in_array( 'administrator', $user->roles ) ) {
+		$field[ 'readonly' ] = true;
+	} else {
+		$field[ 'readonly' ] = false;
+	}
+	return $field;
+}
+add_filter( 'acf/load_field/key=field_607ed024f0383', 'fc_theme_lock_acf_field' );
+
+// Register custom Gutenberg blocks
+
+function fc_theme_register_blocks() {
+	if ( function_exists( 'acf_register_block' ) ) {
+		acf_register_block_type( array(
+			'name' => 'button',
+			'title' => esc_html( btb__( 'Button' ) ),
+			'render_template' => 'template-parts/blocks/block-button.php',
+			'category' => 'design',
+			'icon' => 'button',
+			'mode' => 'edit',
+			'supports' => array(
+				'align' => false,
+				'mode' => false
+			),
+			'keywords' => array(
+				'button'
+			)
+		) );
+		acf_register_block_type( array(
+			'name' => 'form',
+			'title' => esc_html( btb__( 'Formular' ) ),
+			'render_template' => 'template-parts/blocks/block-form.php',
+			'category' => 'widgets',
+			'icon' => 'forms',
+			'mode' => 'edit',
+			'supports' => array(
+				'align' => false,
+				'mode' => false,
+				'multiple' => false
+			),
+			'keywords' => array(
+				'form',
+				'formular'
+			)
+		) );
+		acf_register_block_type( array(
+			'name' => 'hero',
+			'title' => esc_html( btb__( 'Hero' ) ),
+			'render_template' => 'template-parts/blocks/block-hero.php',
+			'category' => 'design',
+			'icon' => 'superhero-alt',
+			'mode' => 'edit',
+			'supports' => array(
+				'align' => false,
+				'mode' => false
+			),
+			'keywords' => array(
+				'hero'
+			)
+		) );
+		acf_register_block_type( array(
+			'name' => 'icon',
+			'title' => esc_html( btb__( 'Icon' ) ),
+			'render_template' => 'template-parts/blocks/block-icon.php',
+			'category' => 'design',
+			'icon' => 'carrot',
+			'mode' => 'edit',
+			'supports' => array(
+				'align' => false,
+				'mode' => false
+			),
+			'keywords' => array(
+				'icon'
+			)
+		) );
+		acf_register_block_type( array(
+			'name' => 'image',
+			'title' => esc_html( btb__( 'Bild' ) ),
+			'render_template' => 'template-parts/blocks/block-image.php',
+			'category' => 'media',
+			'icon' => 'format-image',
+			'mode' => 'edit',
+			'supports' => array(
+				'align' => false,
+				'mode' => false
+			),
+			'keywords' => array(
+				'image',
+				'bild'
+			)
+		) );
+		acf_register_block_type( array(
+			'name' => 'image-gallery',
+			'title' => esc_html( btb__( 'Bildergalerie' ) ),
+			'render_template' => 'template-parts/blocks/block-image-gallery.php',
+			'category' => 'media',
+			'icon' => 'format-gallery',
+			'mode' => 'edit',
+			'supports' => array(
+				'align' => false,
+				'mode' => false
+			),
+			'keywords' => array(
+				'image-gallery',
+				'bildergalerie'
+			)
+		) );
+		acf_register_block_type( array(
+			'name' => 'paragraph',
+			'title' => esc_html( btb__( 'Absatz' ) ),
+			'render_template' => 'template-parts/blocks/block-paragraph.php',
+			'category' => 'text',
+			'icon' => 'editor-alignleft',
+			'mode' => 'edit',
+			'supports' => array(
+				'align' => false,
+				'mode' => false
+			),
+			'keywords' => array(
+				'paragraph',
+				'absatz'
+			)
+		) );
+		acf_register_block_type( array(
+			'name' => 'paragraph-image',
+			'title' => esc_html( btb__( 'Absatz (Bild)' ) ),
+			'render_template' => 'template-parts/blocks/block-paragraph-image.php',
+			'category' => 'text',
+			'icon' => 'align-right',
+			'mode' => 'edit',
+			'supports' => array(
+				'align' => false,
+				'mode' => false
+			),
+			'keywords' => array(
+				'paragraph (image)',
+				'absatz (bild)'
+			)
+		) );
+		acf_register_block_type( array(
+			'name' => 'posts',
+			'title' => esc_html( btb__( 'Beiträge' ) ),
+			'render_template' => 'template-parts/blocks/block-posts.php',
+			'category' => 'widgets',
+			'icon' => 'format-aside',
+			'mode' => 'edit',
+			'supports' => array(
+				'align' => false,
+				'mode' => false
+			),
+			'keywords' => array(
+				'posts',
+				'beiträge'
+			)
+		) );
+		acf_register_block_type( array(
+			'name' => 'quote',
+			'title' => esc_html( btb__( 'Zitat' ) ),
+			'render_template' => 'template-parts/blocks/block-quote.php',
+			'category' => 'design',
+			'icon' => 'format-quote',
+			'mode' => 'edit',
+			'supports' => array(
+				'align' => false,
+				'mode' => false
+			),
+			'keywords' => array(
+				'quote',
+				'zitat'
+			)
+		) );
+		acf_register_block_type( array(
+			'name' => 'separator',
+			'title' => esc_html( btb__( 'Trennlinie' ) ),
+			'render_template' => 'template-parts/blocks/block-separator.php',
+			'category' => 'design',
+			'icon' => 'minus',
+			'mode' => 'edit',
+			'supports' => array(
+				'align' => false,
+				'mode' => false
+			),
+			'keywords' => array(
+				'separator',
+				'trennlinie'
+			)
+		) );
+		acf_register_block_type( array(
+			'name' => 'shortcode',
+			'title' => esc_html( btb__( 'Shortcode' ) ),
+			'render_template' => 'template-parts/blocks/block-shortcode.php',
+			'category' => 'widgets',
+			'icon' => 'shortcode',
+			'mode' => 'edit',
+			'supports' => array(
+				'align' => false,
+				'mode' => false
+			),
+			'keywords' => array(
+				'shortcode'
+			)
+		) );
+		acf_register_block_type( array(
+			'name' => 'video',
+			'title' => esc_html( btb__( 'Video' ) ),
+			'render_template' => 'template-parts/blocks/block-video.php',
+			'category' => 'media',
+			'icon' => 'format-video',
+			'mode' => 'edit',
+			'supports' => array(
+				'align' => false,	
+				'mode' => false
+			),
+			'keywords' => array(
+				'video'
+			)
+		) );
+	}
+}
+add_action( 'acf/init', 'fc_theme_register_blocks' );
+
+// Theme required plugins
+
+require_once trailingslashit( get_template_directory() ) . 'includes/tgm/class-tgm-plugin-activation.php';
+function fc_theme_required_plugins() {
+	$plugins = array(
+		array(
+			'name' => 'ACF Options for Polylang',
+			'slug' => 'acf-options-for-polylang',
+			'required' => false,
+			'force_activation' => false,
+			'force_deactivation' => false
+		),
+		array(
+			'name' => 'Advanced Access Manager',
+			'slug' => 'advanced-access-manager',
+			'required' => false,
+			'force_activation' => false,
+			'force_deactivation' => false
+		),
+		array(
+			'name' => 'Advanced Custom Fields',
+			'slug' => 'advanced-custom-fields',
+			'required' => true,
+			'force_activation' => true,
+			'force_deactivation' => false
+		),
+		array(
+			'name' => 'Advanced Custom Fields PRO',
+			'slug' => 'advanced-custom-fields-pro',
+			'source' => trailingslashit( get_template_directory() ) . 'includes/tgm/plugins/advanced-custom-fields-pro.zip',
+			'required' => true,
+			'force_activation' => true,
+			'force_deactivation' => false
+		),
+		array(
+			'name' => 'All-in-One WP Migration',
+			'slug' => 'all-in-one-wp-migration',
+			'required' => false,
+			'force_activation' => false,
+			'force_deactivation' => false
+		),
+		array(
+			'name' => 'All-in-One WP Migration (Unlimited Extension)',
+			'slug' => 'all-in-one-wp-migration-unlimited-extension',
+			'source' => trailingslashit( get_template_directory() ) . 'includes/tgm/plugins/all-in-one-wp-migration-unlimited-extension.zip',
+			'required' => false,
+			'force_activation' => false,
+			'force_deactivation' => false
+		),
+		array(
+			'name' => 'Custom Post Type UI',
+			'slug' => 'custom-post-type-ui',
+			'required' => true,
+			'force_activation' => true,
+			'force_deactivation' => false
+		),
+		array(
+			'name' => 'Duplicate Post',
+			'slug' => 'duplicate-post',
+			'required' => false,
+			'force_activation' => false,
+			'force_deactivation' => false
+		),
+		array(
+			'name' => 'EWWW Image Optimizer',
+			'slug' => 'ewww-image-optimizer',
+			'required' => false,
+			'force_activation' => false,
+			'force_deactivation' => false
+		),
+		array(
+			'name' => 'FacetWP',
+			'slug' => 'facetwp',
+			'source' => trailingslashit( get_template_directory() ) . 'includes/tgm/plugins/facetwp.zip',
+			'required' => false,
+			'force_activation' => false,
+			'force_deactivation' => false
+		),
+		array(
+			'name' => 'Favicon by RealFaviconGenerator',
+			'slug' => 'favicon-by-realfavicongenerator',
+			'required' => false,
+			'force_activation' => false,
+			'force_deactivation' => false
+		),
+		array(
+			'name' => 'GDPR Cookie Compliance',
+			'slug' => 'gdpr-cookie-compliance',
+			'required' => false,
+			'force_activation' => false,
+			'force_deactivation' => false
+		),
+		array(
+			'name' => 'Hummingbird – Speed Up WordPress',
+			'slug' => 'hummingbird-performance',
+			'required' => false,
+			'force_activation' => false,
+			'force_deactivation' => false
+		),
+		array(
+			'name' => 'Polylang',
+			'slug' => 'polylang',
+			'required' => false,
+			'force_activation' => false,
+			'force_deactivation' => false
+		),
+		array(
+			'name' => 'ACF Post-2-Post',
+			'slug' => 'post-2-post-for-acf',
+			'required' => false,
+			'force_activation' => false,
+			'force_deactivation' => false
+		),
+		array(
+			'name' => 'Safe SVG',
+			'slug' => 'safe-svg',
+			'required' => true,
+			'force_activation' => true,
+			'force_deactivation' => false
+		),
+		array(
+			'name' => 'Bild ersetzen',
+			'slug' => 'replace-image',
+			'required' => false,
+			'force_activation' => false,
+			'force_deactivation' => false
+		),
+		array(
+			'name' => 'WP-SCSS',
+			'slug' => 'wp-scss',
+			'required' => true,
+			'force_activation' => true,
+			'force_deactivation' => false
+		)
+	);
+	$config = array(
+		'id' => 'tgmpa',
+		'menu' => 'tgmpa-install-plugins',
+		'parent_slug' => 'themes.php',
+		'capability' => 'install_plugins',
+		'has_notices' => true,
+		'dismissable' => true,
+		'is_automatic' => true
+	);
+	tgmpa( $plugins, $config );
+}
+add_action( 'tgmpa_register', 'fc_theme_required_plugins' );
+
+// Additional custom functions
+
+function html_element( $element = 'article', $echo = true ) {
+	$element = esc_attr( $element );
+	if ( $echo === true ) {
+		echo $element;
+	} else {
+		return $element;
+	}
+}
+
+function html_class( $default, array $custom, $echo = true ) {
+	if ( !empty( $custom = array_filter( $custom ) ) ) {
+		$classes = array_map( function( $value ) use ( $default ) { return ( $default . '--' . $value ); }, $custom );
+		array_unshift( $classes, $default );
+		$classes = 'class="' . esc_attr( implode( ' ', $classes ) ) . '"';
+	} else {
+		$classes = 'class="' . $default . '"';
+	}
+	if ( $echo === true ) {
+		echo $classes;
+	} else {
+		return $classes;
+	}
+}
+
+function btb__( $string ) {
+	if ( in_array( 'polylang-pro/polylang.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+		$translation = pll__( $string );
+	} else {
+		$translation = __( $string, 'fc_theme' );
+	}
+	return $translation;
+}
