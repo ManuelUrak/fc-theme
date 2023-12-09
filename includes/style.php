@@ -116,7 +116,7 @@ function fc_theme_enqueue_inline_styles() {
 			}
 		}
 	}
-	wp_add_inline_style( 'bap-theme-builder-default-style', implode( '', $font_styles ) );
+	wp_add_inline_style( 'fc-theme-default-style', implode( '', $font_styles ) );
 }
 add_action( 'wp_enqueue_scripts', 'fc_theme_enqueue_inline_styles', 20 );
 
