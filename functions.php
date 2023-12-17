@@ -127,7 +127,7 @@ function fc_theme_dequeue_jquery(){
 	wp_enqueue_script('jquery-migrate', '//cdn.jsdelivr.net/npm/jquery-migrate@3.3.1/dist/jquery-migrate.min.js', array(), '3.3.1', true);
 }
 
-add_action( 'wp_enqueue_scripts', 'fc_theme_builder_dequeue_jquery');
+add_action( 'wp_enqueue_scripts', 'fc_theme_dequeue_jquery');
 
 // Deregister Wordpress WP Embed
 
