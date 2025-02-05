@@ -2,3 +2,4 @@
 .DS_Store
 sftp-config.json
 .vscode/sftp.json
+stubs.php
