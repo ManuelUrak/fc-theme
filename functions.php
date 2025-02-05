@@ -503,7 +503,7 @@ update_option( 'large_size_h', '0', 'yes' );
 
 add_image_size( 'lazy-loading', 50, 50, false );
 
-// Generate responsive Wordpress images
+// Generate responsive Wordpress images 
 
 function fc_theme_responsive_image( $attachment_id, $size, $max_width ) {
 	return sprintf( 
@@ -513,6 +513,42 @@ function fc_theme_responsive_image( $attachment_id, $size, $max_width ) {
 		esc_attr( wp_get_attachment_image_srcset( $attachment_id, $size ) ), 
 		esc_attr( $max_width ) 
 	);
+}
+
+// Function to render images 
+
+function fc_theme_render_image($imgsrc, $class = '', $alt = '', $title = ''){
+	$img_url = wp_get_attachment_image_url($imgsrc, 'full');
+
+	if(empty($alt)){
+		$alt = get_post_meta($imgsrc, '_wp_attachment_image_alt', true);
+	}
+
+	if(empty($title)){
+		$attachment = get_post($imgsrc);
+		$title = $attachment ? $attachment -> post_title : '';
+	}
+
+	$img_url = esc_url($img_url);
+	$class = esc_attr($class);
+	$alt = esc_attr($alt);
+	$title = esc_attr($title);
+
+	$image = sprintf(
+        '<div class="img-container img-container--contain lazy %s">
+            <div class="img-container__inner">
+                <img src="%s" data-src="%s" alt="%s" title="%s" class="lazyload"/>
+            </div>
+        </div>',
+
+		$class,
+		$img_url,
+		$img_url,
+		$alt,
+		$title
+	);
+
+	return $image;
 }
 
 // Set maximum Wordpress image size
