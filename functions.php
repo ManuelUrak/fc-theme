@@ -504,6 +504,7 @@ update_option( 'large_size_h', '0', 'yes' );
 add_image_size( 'lazy-loading', 50, 50, false );
 
 // Generate responsive Wordpress images 
+//TODO: Delete this function after after all dependend child themes are upgraded. Since it's now deprecated.
 
 function fc_theme_responsive_image( $attachment_id, $size, $max_width ) {
 	return sprintf( 
@@ -518,7 +519,7 @@ function fc_theme_responsive_image( $attachment_id, $size, $max_width ) {
 // Function to render images 
 
 function fc_theme_render_image($imgsrc, $class = '', $alt = '', $title = ''){
-	$img_url = wp_get_attachment_image_url($imgsrc, 'full');
+	$img_url = wp_get_attachment_image_url($imgsrc, 'medium');
 
 	if(empty($alt)){
 		$alt = get_post_meta($imgsrc, '_wp_attachment_image_alt', true);
