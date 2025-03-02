@@ -715,6 +715,24 @@ function fc_theme_register_blocks() {
 				'heading'
 			)
 		));
+
+		acf_register_block_type(array(
+			'name' => 'fc-text-image',
+			'title' => 'Image & Text',
+			'render_template' => 'template-parts/blocks/fc-block-text-image.php',
+			'category' => 'design',
+			'icon' => $block_icon,
+			'mode' => 'edit',
+			'supports' => array(
+				'align' => false,
+				'mode' => false,
+				'className' => true
+			),
+			'keywords' => array(
+				'image',
+				'text'
+			)
+		));
 	}
 }
 add_action( 'acf/init', 'fc_theme_register_blocks' );
