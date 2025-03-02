@@ -674,6 +674,72 @@ function fc_theme_register_blocks() {
 				'button link'
 			)
 		));
+
+		acf_register_block_type(array(
+			'name' => 'fc-image',
+			'title' => 'Image',
+			'render_template' => 'template-parts/blocks/fc-block-image.php',
+			'category' => 'design',
+			'icon' => $block_icon,
+			'mode' => 'edit',
+			'supports' => array(
+				'align' => false,
+				'mode' => false 
+			),
+			'keywords' => array(
+				'image'
+			)
+		));
+
+		acf_register_block_type(array(
+			'name' => 'fc-text',
+			'title' => 'Text',
+			'render_template' => 'template-parts/blocks/fc-block-text.php',
+			'category' => 'design',
+			'icon' => $block_icon,
+			'mode' => 'edit',
+			'supports' => array(
+				'align' => false,
+				'mode' => false 
+			),
+			'keywords' => array(
+				'text'
+			)
+		));
+
+		acf_register_block_type(array(
+			'name' => 'fc-shortcode',
+			'title' => 'Shortcode',
+			'render_template' => 'template-parts/blocks/fc-block-shortcode.php',
+			'category' => 'widgets',
+			'icon' => $block_icon,
+			'mode' => 'edit',
+			'supports' => array(
+				'align' => false,
+				'mode' => false,
+				'className' => true
+			),
+			'keywords' => array(
+				'shortcode'
+			)
+		));
+
+		acf_register_block_type(array(
+			'name' => 'fc-heading',
+			'title' => 'Heading',
+			'render_template' => 'template-parts/blocks/fc-block-heading.php',
+			'category' => 'design',
+			'icon' => $block_icon,
+			'mode' => 'edit',
+			'supports' => array(
+				'align' => false,
+				'mode' => false,
+				'className' => true
+			),
+			'keywords' => array(
+				'heading'
+			)
+		));
 	}
 }
 add_action( 'acf/init', 'fc_theme_register_blocks' );
