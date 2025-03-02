@@ -546,31 +546,6 @@ add_filter( 'quicktags_settings', function( $qtInit ) {
 	return $qtInit;
 } );
 
-// Allow specific Gutenberg blocks
-
-function fc_theme_allowed_block_types() {
-	return array(
-		'acf/button',
-		'acf/form',
-		//'acf/hero',
-		//'acf/icon',
-		'acf/image',
-		'acf/image-gallery',
-		'acf/image',
-		'acf/paragraph',
-		'acf/paragraph-image',
-		'acf/posts',
-		'acf/quote',
-		'acf/separator',
-		'acf/shortcode',
-		'acf/video',
-		'core/block'
-	);
-}
-if ( !function_exists( 'fc_theme_child_allowed_block_types' ) ) {
-	add_filter( 'allowed_block_types_all', 'fc_theme_allowed_block_types' );
-}
-
 // Lock ACF field for Wordpress non-admin users
 
 function fc_theme_lock_acf_field( $field ) {
